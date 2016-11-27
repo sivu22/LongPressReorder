@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'LongPressReorder_Example' do
+  pod 'LongPressReorder', :path => '../'
+
+  target 'LongPressReorder_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
