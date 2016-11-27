@@ -1,6 +1,6 @@
 # LongPressReorder
 
-[![CI Status](http://img.shields.io/travis/Cristian Sava/LongPressReorder.svg?style=flat)](https://travis-ci.org/Cristian Sava/LongPressReorder)
+![Swift](https://img.shields.io/badge/Swift-3.0-brightgreen.svg)
 [![Version](https://img.shields.io/cocoapods/v/LongPressReorder.svg?style=flat)](http://cocoapods.org/pods/LongPressReorder)
 [![License](https://img.shields.io/cocoapods/l/LongPressReorder.svg?style=flat)](http://cocoapods.org/pods/LongPressReorder)
 [![Platform](https://img.shields.io/cocoapods/p/LongPressReorder.svg?style=flat)](http://cocoapods.org/pods/LongPressReorder)
