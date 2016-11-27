@@ -55,6 +55,9 @@ public protocol LongPressReorder {
 
 // MARK: - UITableView wrapper for supporting drag and drop reorder
 
+/**
+ Offers cell reordering by wrapping functionality on top of an UITableView
+ */
 open class LongPressReorderTableView {
     
     /// The table which will support reordering of rows
@@ -78,6 +81,7 @@ open class LongPressReorderTableView {
      Single designated initializer
      
      - Parameter tableView: Targeted UITableView
+     - Parameter selectedRowScale: defines how big the cell's pop out effect will be
      */
     public init(_ tableView: UITableView, selectedRowScale: SelectedRowScale = .medium) {
         self.tableView = tableView
@@ -218,6 +222,9 @@ open class LongPressReorderTableView {
 
 // MARK: - Default implementation of LongPressReorder notifications
 
+/**
+ Extension that implements default behaviour for LongPressReorder notifications
+ */
 extension UIViewController: LongPressReorder {
     
     /**
