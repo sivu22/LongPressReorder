@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.summary          = 'Swift library that allows reordering of UITableView cells via long press gesture.'
 
   s.description      =
-'LongPressReorder adresses a common use case when working with tables on an iOS device: the posibility to reorder table rows using a long press gesture, similary to drag and drop gesture. Lightweight and easy to use, LongPressReorder works with any view controller that manages an UITableView.'
+'LongPressReorder adresses a common use case when working with tables on an iOS device: the posibility to reorder table rows using a long press gesture, similar to drag and drop gesture. Lightweight and easy to use, LongPressReorder works with any view controller that manages an UITableView.'
 
   s.homepage         = 'https://github.com/sivu22/LongPressReorder'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
