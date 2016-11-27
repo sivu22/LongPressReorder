@@ -8,7 +8,7 @@
 import UIKit
 
 /// Defines how much does the selected row will pop out of the table when starting reordering.
-enum SelectedRowScale: CGFloat {
+public enum SelectedRowScale: CGFloat {
     /// Selected row will barely pop out of the table.
     case small = 1.01
     /// Selected row will visibly pop out of the table. This is the default value.
@@ -60,7 +60,7 @@ open class LongPressReorderTableView {
     /// The table which will support reordering of rows
     fileprivate(set) var tableView: UITableView
     /// Optional delegate for overriding default behaviour. Normally a subclass of UI(Table)ViewController.
-    var delegate: LongPressReorder?
+    public var delegate: LongPressReorder?
     /// Controls how much the selected row will "pop out" of the table.
     var selectedRowScale: SelectedRowScale
     
@@ -79,7 +79,7 @@ open class LongPressReorderTableView {
      
      - Parameter tableView: Targeted UITableView
      */
-    init(_ tableView: UITableView, selectedRowScale: SelectedRowScale = .medium) {
+    public init(_ tableView: UITableView, selectedRowScale: SelectedRowScale = .medium) {
         self.tableView = tableView
         self.selectedRowScale = selectedRowScale
     }
@@ -226,7 +226,7 @@ extension UIViewController: LongPressReorder {
      - Parameter currentIndex: Current position of row inside the table
      - Parameter newIndex: New position of row inside the table
      */
-    public func positionChanged(currentIndex: IndexPath, newIndex: IndexPath) {
+    open func positionChanged(currentIndex: IndexPath, newIndex: IndexPath) {
     }
     
     /**
@@ -235,7 +235,7 @@ extension UIViewController: LongPressReorder {
      - Parameter initialIndex: Initial position of row inside the table, when the long press gesture starts
      - Parameter finalIndex: Final position of row inside the table, when the long press gesture finishes
      */
-    public func reorderFinished(initialIndex: IndexPath, finalIndex: IndexPath) {
+    open func reorderFinished(initialIndex: IndexPath, finalIndex: IndexPath) {
     }
     
     /**
@@ -244,7 +244,7 @@ extension UIViewController: LongPressReorder {
      - Parameter atIndex: Position of row
      - Returns: True to allow selected row to be reordered, false if row should not be moved
      */
-    public func startReorderingRow(atIndex indexPath: IndexPath) -> Bool {
+    open func startReorderingRow(atIndex indexPath: IndexPath) -> Bool {
         return true
     }
     
@@ -254,7 +254,7 @@ extension UIViewController: LongPressReorder {
      - Parameter atIndex: Position of row that is allowed to be swapped
      - Returns: True to allow row to change its position, false if row is imutable
      */
-    public func allowChangingRow(atIndex indexPath: IndexPath) -> Bool {
+    open func allowChangingRow(atIndex indexPath: IndexPath) -> Bool {
         return true
     }
 }
