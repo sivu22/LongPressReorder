@@ -104,7 +104,7 @@ extension SpecificViewController {
 
 ### Customization
 
-After pressing on the desired cell, it will pop out of the table and will be ready to be dragged around. This pop out effect can be customized using 3 different scales for the selected cell: small, medium and big (default is medium).
+After pressing on the desired cell, it will pop out of the table and will be ready to be dragged around. This pop out effect can be customized using 4 different scales for the selected cell: none, small, medium and big (default is medium).
 ```swift
 reorderTableView = LongPressReorderTableView(elementsTableView, selectedRowScale: SelectedRowScale.small)
 ```
@@ -128,7 +128,7 @@ pod "LongPressReorder"
 or
 
 ```ruby
-pod 'LongPressReorder', '~> 1.0.0'
+pod 'LongPressReorder', '~> 1.0.1'
 ```
 
 ### Manually

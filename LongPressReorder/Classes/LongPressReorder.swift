@@ -9,6 +9,8 @@ import UIKit
 
 /// Defines how much does the selected row will pop out of the table when starting reordering.
 public enum SelectedRowScale: CGFloat {
+    /// Selected row will pop out without scaling at all
+    case none = 1.00
     /// Selected row will barely pop out of the table.
     case small = 1.01
     /// Selected row will visibly pop out of the table. This is the default value.
