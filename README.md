@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/LongPressReorder.svg?style=flat)](http://cocoapods.org/pods/LongPressReorder)
 [![Platform](https://img.shields.io/cocoapods/p/LongPressReorder.svg?style=flat)](http://cocoapods.org/pods/LongPressReorder)
 
-LongPressReorder adresses a common use case when working with tables on an iOS device: the posibility to reorder table rows using a long press gesture, similar to drag and drop gesture. Lightweight and easy to use, LongPressReorder works with any view controller that manages an UITableView.
+LongPressReorder adresses a common use case when working with tables on an iOS device: the posibility to reorder table rows using a long press gesture, similar to drag and drop gesture. Lightweight and easy to use, LongPressReorder works with any view controller that manages an UITableView with only 1 section.
 
 This Swift module is based on the well-known article posted on raywenderlich.com: 
 
