@@ -3,7 +3,7 @@
 //  LongPressReorder
 //
 //  Created by Cristian Sava on 27/11/2016.
-//  Copyright © 2016 CocoaPods. All rights reserved.
+//  Copyright © 2016 Cristian Sava. All rights reserved.
 //
 
 import UIKit
@@ -21,7 +21,6 @@ class ExampleTableViewController: UITableViewController {
         reorderTableView = LongPressReorderTableView(tableView)
         reorderTableView.delegate = self
         reorderTableView.enableLongPressReorder()
-        
     }
 
     override func didReceiveMemoryWarning() {

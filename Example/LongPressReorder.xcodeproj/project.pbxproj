@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		02617A9BD195E2179B215E92 /* Pods_LongPressReorder_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B2FC72A5C52F99E7048FDF6 /* Pods_LongPressReorder_Tests.framework */; };
 		525016CF1DEB656200A7EF71 /* ExampleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525016CE1DEB656200A7EF71 /* ExampleTableViewController.swift */; };
+		52A7FB021F813CA4003536D7 /* MultipleSectionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7FB011F813CA4003536D7 /* MultipleSectionsTableViewController.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
@@ -33,6 +34,7 @@
 		48FB4D990F32F9C5323B5091 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		4B2FC72A5C52F99E7048FDF6 /* Pods_LongPressReorder_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LongPressReorder_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		525016CE1DEB656200A7EF71 /* ExampleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleTableViewController.swift; sourceTree = "<group>"; };
+		52A7FB011F813CA4003536D7 /* MultipleSectionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSectionsTableViewController.swift; sourceTree = "<group>"; };
 		5F68703BA7F6BF289CE38E74 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* LongPressReorder_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LongPressReorder_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				525016CE1DEB656200A7EF71 /* ExampleTableViewController.swift */,
+				52A7FB011F813CA4003536D7 /* MultipleSectionsTableViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -365,6 +368,7 @@
 			files = (
 				525016CF1DEB656200A7EF71 /* ExampleTableViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				52A7FB021F813CA4003536D7 /* MultipleSectionsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
