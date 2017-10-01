@@ -33,10 +33,10 @@ var reorderTableView: LongPressReorderTableView!
 Assuming we are working with a UITableViewController, create the object in onViewDidLoad()
 ```swift
 override func viewDidLoad() {
-        super.viewDidLoad()
+    super.viewDidLoad()
         
-        reorderTableView = LongPressReorderTableView(tableView)
-    }
+    reorderTableView = LongPressReorderTableView(tableView)
+}
 ```
 
 In the case of a regular UIViewController with an UITableView inside, use the specific table outlet

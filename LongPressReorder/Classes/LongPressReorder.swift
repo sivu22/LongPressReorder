@@ -22,7 +22,7 @@ public enum SelectedRowScale: CGFloat {
 /**
  Notifications that allow configuring the reorder of rows
 */
-public protocol LongPressReorder {
+@objc public protocol LongPressReorder {
     
     /**
      Will be called when the moving row changes its current position to a new position inside the table.
