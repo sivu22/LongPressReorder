@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'LongPressReorder'
-  s.version          = '1.0.1'
+  s.version          = '1.1.0'
   s.summary          = 'Swift library that allows reordering of UITableView cells via long press gesture.'
 
   s.description      =
