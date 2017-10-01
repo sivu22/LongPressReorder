@@ -19,6 +19,10 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ![LongPressReorder](/Screenshots/LongPressReorder.gif)
 
+**UITableViewController with multiple sections**
+
+![LongPressReorderMultiple](/Screenshots/LongPressReorderMultiple.gif)
+
 ## Usage
 
 Because of the way Swift handles protocols and extensions, it's extremely hard or next to impossible to add the desired behaviour directly on UIViewController or UITableView. Using the objc_setAssociatedObject hack is not an elegant Swift solution, therefore this module uses a wrapper of UITableView to achieve flexibility and cover all use cases.
