@@ -12,13 +12,18 @@ import LongPressReorder
 class ExampleTableViewController: UITableViewController {
     
     var reorderTableView: LongPressReorderTableView!
+    var indexes: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        for i in 1...30 {
+            indexes.append(String(i))
+        }
+        
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         
-        reorderTableView = LongPressReorderTableView(tableView)
+        reorderTableView = LongPressReorderTableView(tableView, scrollBehaviour: .early)
         reorderTableView.delegate = self
         reorderTableView.enableLongPressReorder()
     }
@@ -34,7 +39,7 @@ class ExampleTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 12
+        return 30
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -43,7 +48,7 @@ class ExampleTableViewController: UITableViewController {
         if indexPath.row == 0 {
             cell.textLabel?.text = "Cell 1 not moving"
         } else {
-            cell.textLabel?.text = "Cell \(indexPath.row + 1)"
+            cell.textLabel?.text = "Cell \(indexes[indexPath.row])"
         }
 
         return cell
@@ -68,6 +73,11 @@ extension ExampleTableViewController {
         }
         
         return false
+    }
+    
+    override func positionChanged(currentIndex: IndexPath, newIndex: IndexPath) {
+        // Simulate a change in model
+        indexes.swapAt(currentIndex.row, newIndex.row)
     }
 }
 
