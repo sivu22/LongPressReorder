@@ -19,6 +19,16 @@ public enum SelectedRowScale: CGFloat {
     case big = 1.05
 }
 
+/// Defines how the UITableView will auto scroll if more table cells exist than the visible ones.
+public enum ScrollBehaviour: Int {
+    /// No autoscroll, the user has to scroll the table view.
+    case none = 0
+    /// Scroll automatically when the selected cell is near the screen border.
+    case late = 3
+    /// Scroll automatically when the selected cell is a few cells apart from the screen border.
+    case early = 6
+}
+
 /**
  Notifications that allow configuring the reorder of rows
 */
@@ -66,6 +76,8 @@ open class LongPressReorderTableView {
     fileprivate(set) var tableView: UITableView
     /// Optional delegate for overriding default behaviour. Normally a subclass of UI(Table)ViewController.
     public var delegate: LongPressReorder?
+    /// Controls how the table will autoscroll, if at all.
+    var scrollBehaviour: ScrollBehaviour
     /// Controls how much the selected row will "pop out" of the table.
     var selectedRowScale: SelectedRowScale
     
@@ -77,16 +89,19 @@ open class LongPressReorderTableView {
         static var currentIndexPath: IndexPath!
         static var cellAnimating: Bool = false
         static var cellMustShow : Bool = false
+        static var allowScroll: Bool = true
     }
     
     /**
      Single designated initializer
      
      - Parameter tableView: Targeted UITableView
+     - Parameter scrollBehaviour: defines how the table will autoscroll
      - Parameter selectedRowScale: defines how big the cell's pop out effect will be
      */
-    public init(_ tableView: UITableView, selectedRowScale: SelectedRowScale = .medium) {
+    public init(_ tableView: UITableView, scrollBehaviour: ScrollBehaviour = .none, selectedRowScale: SelectedRowScale = .medium) {
         self.tableView = tableView
+        self.scrollBehaviour = scrollBehaviour
         self.selectedRowScale = selectedRowScale
     }
     
@@ -157,6 +172,30 @@ open class LongPressReorderTableView {
             }
             if !(delegate?.allowChangingRow(atIndex: indexPath) ?? true) {
                 break
+            }
+            
+            if scrollBehaviour != .none, DragInfo.allowScroll, let visibleRowsPaths = tableView.indexPathsForVisibleRows, visibleRowsPaths.count > 2 {
+                var lastVisibleRowPath = visibleRowsPaths[visibleRowsPaths.count - 1]
+                var newRow = lastVisibleRowPath.row + 1
+                var scrollPosition = UITableViewScrollPosition.bottom
+                if DragInfo.cellSnapshot.center.y > point.y {
+                    lastVisibleRowPath = visibleRowsPaths[0]
+                    newRow = lastVisibleRowPath.row - 1
+                    scrollPosition = UITableViewScrollPosition.top
+                }
+                
+                if (scrollPosition == .bottom && newRow < tableView.numberOfRows(inSection: indexPath.section)) ||
+                    (scrollPosition == .top && newRow > 0) {
+                    if abs(DragInfo.currentIndexPath.row - newRow) < scrollBehaviour.rawValue {
+                        let scrollIndexPath = IndexPath(row: newRow, section: indexPath.section)
+                        DragInfo.allowScroll = false
+                        UIView.animate(withDuration: 0.2, animations: {
+                            self.tableView.scrollToRow(at: scrollIndexPath, at: scrollPosition, animated: false)
+                        }, completion: {finished in
+                            DragInfo.allowScroll = true
+                        })
+                    }
+                }
             }
             
             var center = DragInfo.cellSnapshot.center
