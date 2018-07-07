@@ -108,7 +108,12 @@ extension SpecificViewController {
 
 ### Customization
 
-After pressing on the desired cell, it will pop out of the table and will be ready to be dragged around. This pop out effect can be customized using 4 different scales for the selected cell: none, small, medium and big (default is medium).
+When there are more cells in the table that the ones that can be displayed on the device screen at a certain moment, autoscroll can be used when reordering the cells. Autoscroll is turned off by default.
+```swift
+reorderTableView = LongPressReorderTableView(elementsTableView, scrollBehaviour: .early)
+```
+
+After pressing on the desired cell, the cell will pop out of the table and will be ready to be dragged around. This pop out effect can be customized using 4 different scales for the selected cell: none, small, medium and big (default is medium).
 ```swift
 reorderTableView = LongPressReorderTableView(elementsTableView, selectedRowScale: SelectedRowScale.small)
 ```
@@ -116,9 +121,9 @@ reorderTableView = LongPressReorderTableView(elementsTableView, selectedRowScale
 
 ## Requirements
 
-- Swift 3
+- Swift 4.1
 - iOS 9.0 +
-- XCode 8.0+
+- XCode 9.4+
 
 ## Installation
 
@@ -132,7 +137,7 @@ pod "LongPressReorder"
 or
 
 ```ruby
-pod 'LongPressReorder', '~> 1.1.0'
+pod 'LongPressReorder', '~> 1.2.0'
 ```
 
 ### Manually
