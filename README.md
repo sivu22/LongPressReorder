@@ -140,7 +140,7 @@ pod "LongPressReorder"
 or
 
 ```ruby
-pod 'LongPressReorder', '~> 1.2.0'
+pod 'LongPressReorder', '~> 1.2.1'
 ```
 
 ### Manually
