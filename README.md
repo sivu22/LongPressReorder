@@ -53,7 +53,10 @@ The only thing left now is to enable it with
 reorderTableView.enableLongPressReorder()
 ```
 
-That was all. All the cells inside the UITableView can now be reordered using the long press gesture.
+That was all. All the cells inside the UITableView can now be reordered using the long press gesture. To disable reordering of cells, simply call
+```swift
+reorderTableView.disableLongPressReorder()
+```
 
 You may want to also disable the table's Selection on the cell for a better visual effect.
 

@@ -113,7 +113,7 @@ open class LongPressReorderTableView {
      Add a long press gesture recognizer to the table view, therefore enabling row reordering via drag and drop.
      */
     open func enableLongPressReorder() {
-        guard longPress != nil else {
+        guard longPress == nil else {
             return
         }
         
