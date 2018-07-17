@@ -74,6 +74,8 @@ open class LongPressReorderTableView {
     
     /// The table which will support reordering of rows
     fileprivate(set) var tableView: UITableView
+    /// Long press gesture recognizer
+    private var longPress: UIGestureRecognizer?
     /// Optional delegate for overriding default behaviour. Normally a subclass of UI(Table)ViewController.
     public var delegate: LongPressReorder?
     /// Controls how the table will autoscroll, if at all.
@@ -111,8 +113,24 @@ open class LongPressReorderTableView {
      Add a long press gesture recognizer to the table view, therefore enabling row reordering via drag and drop.
      */
     open func enableLongPressReorder() {
-        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(self.longPressGestureRecognized(_:)))
-        tableView.addGestureRecognizer(longPress)
+        guard longPress != nil else {
+            return
+        }
+        
+        longPress = UILongPressGestureRecognizer(target: self, action: #selector(self.longPressGestureRecognized(_:)))
+        tableView.addGestureRecognizer(longPress!)
+    }
+    
+    /**
+     Disable the row reordering via drag and drop by removing the gesture recognizer.
+     */
+    open func disableLongPressReorder() {
+        // To prevent multiple calls to this function without a matching enableLongPressReorder()
+        if let longPress = longPress {
+            // longPress will be released
+            tableView.removeGestureRecognizer(longPress)
+        }
+        longPress = nil
     }
     
     // MARK: - Long press gesture action
