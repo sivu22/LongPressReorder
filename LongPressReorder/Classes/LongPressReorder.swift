@@ -195,11 +195,11 @@ open class LongPressReorderTableView {
             if scrollBehaviour != .none, DragInfo.allowScroll, let visibleRowsPaths = tableView.indexPathsForVisibleRows, visibleRowsPaths.count > 2 {
                 var lastVisibleRowPath = visibleRowsPaths[visibleRowsPaths.count - 1]
                 var newRow = lastVisibleRowPath.row + 1
-                var scrollPosition = UITableViewScrollPosition.bottom
+                var scrollPosition = UITableView.ScrollPosition.bottom
                 if DragInfo.cellSnapshot.center.y > point.y {
                     lastVisibleRowPath = visibleRowsPaths[0]
                     newRow = lastVisibleRowPath.row - 1
-                    scrollPosition = UITableViewScrollPosition.top
+                    scrollPosition = UITableView.ScrollPosition.top
                 }
                 
                 if (scrollPosition == .bottom && newRow < tableView.numberOfRows(inSection: indexPath.section)) ||
